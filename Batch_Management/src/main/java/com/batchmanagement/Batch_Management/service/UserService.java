@@ -1,0 +1,18 @@
+package com.batchmanagement.Batch_Management.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.batchmanagement.Batch_Management.entity.User;
+import com.batchmanagement.Batch_Management.repository.UserRepository;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	public User createUser(User user) {
+		return userRepository.save(user);
+	}
+}
